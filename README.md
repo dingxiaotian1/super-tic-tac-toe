@@ -53,11 +53,11 @@
 
 ### 游戏模式选择
 
-![游戏模式选择](https://example.com/screenshot-mode-selection.png)
+![游戏模式选择](1.png)
 
 ### 游戏进行中
 
-![游戏进行中](https://example.com/screenshot-game-playing.png)
+![游戏进行中](2.png)
 
 ## 如何贡献
 
