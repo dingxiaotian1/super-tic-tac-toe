@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超级井字棋</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>超级井字棋</h1>
+        <p class="subtitle">经典游戏，全新玩法</p>
+        
+        <!-- 游戏模式选择界面 -->
+        <div id="mode-selection" class="screen active">
+            <div class="mode-card">
+                <h2>游戏模式选择</h2>
+                <p class="mode-subtitle">选择以下模式开始游戏</p>
+                
+                <div class="mode-buttons">
+                    <button id="ai-mode-btn" class="mode-btn ai-mode">
+                        <i class="fas fa-robot"></i>
+                        <span>人机对战</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="two-player-btn" class="mode-btn two-player">
+                        <i class="fas fa-users"></i>
+                        <span>双人对战</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="rules-section">
+                    <h3><i class="fas fa-info-circle"></i> 游戏规则简介</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3×3标准九宫格，率先连成3子者获胜</li>
+                        <li><i class="fas fa-check"></i> 棋盘最多同时显示6枚最新落子，第7枚落下时第1枚消失</li>
+                        <li><i class="fas fa-check"></i> 横向、纵向或对角线形成3枚连续相同棋子即获胜</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 游戏主界面 -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="current-turn">
+                    <span class="turn-label">当前回合</span>
+                    <span id="current-player" class="player-badge player1">玩家 1</span>
+                </div>
+                <div class="players-indicator">
+                    <span class="player-indicator player1">
+                        <i class="fas fa-circle"></i>
+                        玩家 1
+                    </span>
+                    <span id="ai-indicator" class="player-indicator ai" style="display: none;">
+                        <i class="fas fa-circle"></i>
+                        AI
+                    </span>
+                    <span id="player2-indicator" class="player-indicator player2">
+                        <i class="fas fa-circle"></i>
+                        玩家 2
+                    </span>
+                </div>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat-item">
+                    <i class="fas fa-cubes"></i>
+                    <span>已落子:</span>
+                    <span id="move-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <span>游戏时间:</span>
+                    <span id="game-time">00:00</span>
+                </div>
+            </div>
+            
+            <div class="board-container">
+                <div class="board" id="board">
+                    <!-- 3x3 棋盘格子将通过 JavaScript 动态生成 -->
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <button id="restart-btn" class="control-btn restart">
+                    <i class="fas fa-redo"></i>
+                    重新开始
+                </button>
+                <button id="back-btn" class="control-btn back">
+                    <i class="fas fa-arrow-left"></i>
+                    返回选择
+                </button>
+            </div>
+        </div>
+        
+        <!-- 游戏结束界面 -->
+        <div id="game-over" class="screen">
+            <div class="game-over-card">
+                <h2 id="game-result"></h2>
+                <div class="game-over-buttons">
+                    <button id="play-again-btn" class="control-btn restart">
+                        <i class="fas fa-redo"></i>
+                        再来一局
+                    </button>
+                    <button id="back-to-menu-btn" class="control-btn back">
+                        <i class="fas fa-home"></i>
+                        返回菜单
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
